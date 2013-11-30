@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Raffler in CoffeeScript</title>
+   <link rel="stylesheet" href="raffler.css" media="screen">
+</head>
+<body>
+    <header id="header">
+      <h1>Raffler</h1>
+    </header>
+    <section id="raffler">
+        <div id="new">
+            <input id="new-name"  size="60" autofocus>
+            <input type="submit" value="New" id="newvalue"/>
+        </div>
+        <div id="winners">
+            <ul id="name-list"></ul>
+        </div>
+        <div id='chooser'>
+            <button id='choosewinner'>Draw Winner</button>
+        </div>
+    </section>
+  <!-- Templates -->
+  <script type="text/template" id="item-template">
+      <button class="entry-delete">Remove</button>
+      <ul>
+      <% _.each(entries, function(entry){ %>
+            <li><%- entry.name %></li>
+      <% }); %>
+    </ul>
+  </script>  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js" type="text/javascript"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js" type="text/javascript"></script>
+
+
+  <script type="text/javascript" src="raffler.js"> </script>
+</body>
+</html>
